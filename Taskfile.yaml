@@ -1,0 +1,22 @@
+version: 3
+
+tasks:
+  lint:
+    desc: Lint using clippy
+    cmd: cargo clippy -- -D warnings
+
+  watch:
+    desc: Inner development circle
+    cmd: cargo watch -x clippy -x test -x run
+
+  audit:
+    desc: Audit for vulnerabilities on external packages
+    cmd: cargo audit
+
+  format:
+    desc: Format code
+    cmd: cargo format
+
+  format-check:
+    desc: Check if code is formatted
+    cmd: cargo fmt -- --check
